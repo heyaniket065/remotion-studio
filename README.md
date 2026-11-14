@@ -95,3 +95,72 @@ Be aware of that Remotion has a special license and requires obtaining a company
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) to learn about contributing to this project.
+<div align="center">
+
+  <img src="https://img.icons8.com/nolan/256/film-reel.png" alt="Remotion Studio Logo" width="130" height="130" />
+
+  <h1>🎞️ Remotion Studio (Programmatic Video Engine)</h1>
+
+  <p>
+    <strong>Create, Render & Automate High-Definition Videos Programmatically Using React & TypeScript</strong><br />
+    Turn data, UI components, and dynamic code into MP4/WebM motion graphics at scale.
+  </p>
+
+  <p>
+    <img src="https://img.shields.io/badge/React-18%2B-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-5.0%2B-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Rendering-FFmpeg%20%7C%20Chromium-FF0000?style=for-the-badge&logo=ffmpeg&logoColor=white" alt="FFmpeg" />
+    <img src="https://img.shields.io/badge/Automation-Node.js%20%7C%20Lambda-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
+    <img src="https://img.shields.io/badge/License-Open%20Source-00C853?style=for-the-badge" alt="License" />
+  </p>
+
+  <p>
+    <a href="#-overview">Overview</a> •
+    <a href="#-key-features">Features</a> •
+    <a href="#-rendering-pipeline">Architecture</a> •
+    <a href="#-getting-started">Installation</a> •
+    <a href="#-code-example">Code Example</a> •
+    <a href="#-cli-commands">CLI Commands</a>
+  </p>
+
+</div>
+
+---
+
+## 📖 Overview
+
+**Remotion Studio** is a programmatic video creation framework that empowers developers and creators to build real MP4 videos using **React, CSS, Canvas, SVG, and WebGL**. Instead of manually dragging keyframes in traditional timeline editors, you write reusable React components driven by `useCurrentFrame()` and `useVideoConfig()` hooks—enabling automated video generation, data-driven animations, and server-side rendering pipelines.
+
+---
+
+## ✨ Key Features
+
+| Feature | Description |
+| :--- | :--- |
+| ⚛️ **React-Powered Video** | Leverage the full React ecosystem, Tailwind CSS, Three.js, and Lottie animations inside video frames. |
+| 🎛️ **Interactive Studio Preview** | Scrub through frames, inspect timelines, and hot-reload changes in real time via the browser studio. |
+| ⚡ **Frame-Accurate Physics** | Built-in `spring()`, `interpolate()`, and easing functions for smooth 60 FPS motion graphics. |
+| 🤖 **Automated Batch Rendering** | Inject dynamic JSON props via CLI or Node.js APIs to generate thousands of personalized videos automatically. |
+| ☁️ **Scalable Cloud & Local Export** | Render locally via headless Chromium + FFmpeg or distribute frames across serverless cloud workers. |
+
+---
+
+## 🏗️ Rendering Pipeline
+
+```text
+┌──────────────────────────────────────────────────────────────────────┐
+│              React Composition (<Composition/> + Dynamic Props)     │
+└──────────────────────────────────┬───────────────────────────────────┘
+                                   │
+                                   ▼
+┌──────────────────────────────────────────────────────────────────────┐
+│                  Frame-by-Frame Headless Browser                     │
+│        (Evaluates useCurrentFrame() from Frame 0 to Duration)        │
+└──────────────────────────────────┬───────────────────────────────────┘
+                                   │
+                                   ▼
+┌──────────────────────────────────────────────────────────────────────┐
+│                   FFmpeg Video & Audio Encoder                       │
+│     (Stitches PNG/JPEG Frames + Audio Tracks -> H.264 / WebM MP4)    │
+└──────────────────────────────────────────────────────────────────────┘
+
